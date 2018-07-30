@@ -43,7 +43,7 @@ public:
     QPushButton *clearRecvButton;
     QPushButton *SendDButton;
     QPushButton *OpenSeriButton;
-    QLineEdit *lineEdit;
+    QLineEdit *pathEdit;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QComboBox *portBox;
@@ -52,6 +52,8 @@ public:
     QComboBox *ParityBox;
     QTextEdit *RectextEdit;
     QTextEdit *sendtextEdit;
+    QPushButton *FindFileButton;
+    QPushButton *TestButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -96,9 +98,9 @@ public:
         OpenSeriButton = new QPushButton(centralWidget);
         OpenSeriButton->setObjectName(QStringLiteral("OpenSeriButton"));
         OpenSeriButton->setGeometry(QRect(590, 591, 161, 31));
-        lineEdit = new QLineEdit(centralWidget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(570, 539, 281, 31));
+        pathEdit = new QLineEdit(centralWidget);
+        pathEdit->setObjectName(QStringLiteral("pathEdit"));
+        pathEdit->setGeometry(QRect(570, 460, 301, 31));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(640, 30, 101, 151));
@@ -133,6 +135,12 @@ public:
         sendtextEdit = new QTextEdit(centralWidget);
         sendtextEdit->setObjectName(QStringLiteral("sendtextEdit"));
         sendtextEdit->setGeometry(QRect(60, 310, 501, 251));
+        FindFileButton = new QPushButton(centralWidget);
+        FindFileButton->setObjectName(QStringLiteral("FindFileButton"));
+        FindFileButton->setGeometry(QRect(640, 510, 141, 31));
+        TestButton = new QPushButton(centralWidget);
+        TestButton->setObjectName(QStringLiteral("TestButton"));
+        TestButton->setGeometry(QRect(580, 330, 75, 23));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -191,6 +199,8 @@ public:
          << QApplication::translate("MainWindow", "\345\245\207\346\225\260", Q_NULLPTR)
          << QApplication::translate("MainWindow", "\345\201\266\346\225\260", Q_NULLPTR)
         );
+        FindFileButton->setText(QApplication::translate("MainWindow", "FindFile", Q_NULLPTR));
+        TestButton->setText(QApplication::translate("MainWindow", "Test", Q_NULLPTR));
     } // retranslateUi
 
 };

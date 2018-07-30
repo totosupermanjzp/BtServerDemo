@@ -164,12 +164,12 @@
      <string>打开串口</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="pathEdit">
     <property name="geometry">
      <rect>
       <x>570</x>
-      <y>539</y>
-      <width>281</width>
+      <y>460</y>
+      <width>301</width>
       <height>31</height>
      </rect>
     </property>
@@ -289,6 +289,32 @@
       <width>501</width>
       <height>251</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="FindFileButton">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>510</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FindFile</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="TestButton">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>330</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Test</string>
     </property>
    </widget>
   </widget>

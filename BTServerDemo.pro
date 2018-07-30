@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = BTServerDemo
+TARGET = BTServerDemoz
 TEMPLATE = app
 QT      += serialport
 
@@ -26,10 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    openfile.cpp \
+    workthread.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    openfile.h \
+    workthread.h
 
 FORMS += \
         mainwindow.ui

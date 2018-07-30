@@ -3,6 +3,10 @@
 #include "QDebug"
 #include <QtSerialPort/QSerialPort>
 #include <QtSerialPort/QSerialPortInfo>
+#include "openfile.h"
+#include <QTime>
+#include <QList>
+#include <workthread.h>
 
 #include <QMainWindow>
 
@@ -16,6 +20,11 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+
+    void InitThreadPools();
+    void CreateNewWorkThread();
+    void RunThread();
+
     ~MainWindow();
 
 private slots:
@@ -27,9 +36,35 @@ private slots:
 
     void Read_Data();
 
+    void on_FindFileButton_clicked();
+
+    void writeThread(QString str);
+
+protected:
+
+    QList<QThread *> m_IdleThreadPool;
+
+signals:
+    void startwriteThread(QString str);
+
 private:
     Ui::MainWindow *ui;
     QSerialPort *serial;
+    QString strFilePath;
+
+
+public:
+
+signals:
+    void startMyThread(QString str);
+private:
+    WorkThread *myThread;
+    QThread *thread;
+
+private slots:
+    void dealClose();
+    void on_TestButton_clicked();
+    void dealMySignal(QString str);
 };
 
 #endif // MAINWINDOW_H
